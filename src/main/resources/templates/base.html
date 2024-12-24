@@ -12,18 +12,8 @@
 </head>
 <body>
     <!--common header-->
-
-    <ul class="p-4">
-        <li>
-            <a data-th-href="@{'/home'}">Home</a>
-        </li>
-        <li>
-            <a data-th-href="@{'/services'}">Services</a>
-        </li>
-        <li>
-            <a data-th-href="@{'/about'}">About</a>
-        </li>
-    </ul>
+<div data-th-replace="navbar :: navbar"></div>
+    
     <!--main content-->
 <div class="p-4">
     <section data-th-replace="${content}"></section>
@@ -31,7 +21,7 @@
 
    <!--flow bite content-->
    <!--common footer-->
-   <footer>Footer : Complete Project</footer>
+   <footer class="p-4">Footer : Complete Project</footer>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     <th:block data-th-replace="${script}"></th:block>
 </body>
