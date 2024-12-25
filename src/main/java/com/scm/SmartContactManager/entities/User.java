@@ -3,8 +3,10 @@ package com.scm.SmartContactManager.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -39,9 +41,9 @@ public class User {
     private boolean phoneVerified=false;
     
     // Self,google,facebook,twitter,linkedin , github
-    private providers provider=providers.SELF;
+    private Provider provider=Provider.SELF;
     private String providerUserId;
 
-    @OneToMany(mappedBy = "user")
-    private List<Contact> contacts=new ArrayList<>();
+    // @OneToMany(mappedBy = "user",cascade=CascadeType.ALL,fetch =FetchType.LAZY,orphanRemoval = true)
+    // private List<Contact> contacts=new ArrayList<>();
 }
